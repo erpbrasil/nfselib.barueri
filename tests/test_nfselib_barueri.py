@@ -22,6 +22,6 @@ def test_gerar_registro_tipo_1():
     rps.exportar_txt("rps_teste.txt")
 
     # Lendo e imprimindo o conteúdo do arquivo TXT gerado
-    # with open("rps_teste.txt", "r") as arquivo:
-    #     conteudo = arquivo.read()
-    #     print(conteudo)
+    with open("rps_teste.txt", "r") as arquivo:
+        conteudo = arquivo.read()
+        print(conteudo)
