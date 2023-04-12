@@ -10,10 +10,10 @@ class RPS(Arquivo):
 class RegistroTipo1(Registro):
     campos = [
         CampoPosicional("TipoRegistro", "1", True, "NUM", 1, 1, 1),
-        CampoPosicional("InscricaoContribuinte", None, True, "NUM", 14, 2, 15),
-        CampoPosicional("VersaoLayout", "PMB002", True, "NUM", 5, 16, 20),
-        CampoPosicional("IdentificacaoRemessaContribuinte", None, True, "NUM", 12, 21, 32),
-        CampoPosicional("CaracterFimLinha", "\r\n", True, "ALFA", 2, 33, 34),
+        CampoPosicional("InscricaoContribuinte", None, True, "ALFA", 7, 2, 8),
+        CampoPosicional("VersaoLayout", "PMB002", True, "NUM", 6, 9, 14),
+        CampoPosicional("IdentificacaoRemessaContribuinte", None, True, "NUM", 11, 15, 25),
+        CampoPosicional("CaracterFimLinha", "\r\n", True, "ALFA", 1, 26, 26),
     ]
 
 
