@@ -1,4 +1,3 @@
-# TODO: Enviar classes para erpbrasil.base
 
 
 class CampoPosicional:
