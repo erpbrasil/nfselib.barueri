@@ -19,7 +19,7 @@ def read(*names, **kwargs):
 
 setup(
     name='nfselib.barueri',
-    version='0.0.1',
+    version='0.1.0',
     license='MIT',
     description='Python Library to genereate Barueri NFS-e',
     long_description='{}\n{}'.format(
