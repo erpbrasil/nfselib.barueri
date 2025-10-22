@@ -64,7 +64,9 @@ class RegistroTipo2(Registro):
         CampoPosicional("ValorFatura", None, False, "NUM", 15, 941, 955),
         CampoPosicional("FormaPagamento", None, False, "ALFA", 15, 956, 970),
         CampoPosicional("DiscriminacaoServico", None, True, "ALFA", 1000, 971, 1970),
-        CampoPosicional("CaracterFimLinha", "\r\n", True, "ALFA", 1, 1971, 1971),
+        CampoPosicional("CClassTribIBSCBS", None, False, "NUM", 7, 1971, 1977),
+        CampoPosicional("CSTIBSCBS", None, False, "NUM", 3, 1978, 1980),
+        CampoPosicional("CaracterFimLinha", "\r\n", True, "ALFA", 2, 1981, 1982),
     ]
 
 
