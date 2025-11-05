@@ -11,7 +11,7 @@ class RegistroTipo1(Registro):
     campos = [
         CampoPosicional("TipoRegistro", "1", True, "NUM", 1, 1, 1),
         CampoPosicional("InscricaoContribuinte", None, True, "ALFA", 7, 2, 8),
-        CampoPosicional("VersaoLayout", "PMB002", True, "NUM", 6, 9, 14),
+        CampoPosicional("VersaoLayout", "PMB003", True, "ALFA", 6, 9, 14),
         CampoPosicional("IdentificacaoRemessaContribuinte", None, True, "NUM", 11, 15, 25),
         CampoPosicional("CaracterFimLinha", "\r\n", True, "ALFA", 1, 26, 26),
     ]
@@ -48,7 +48,7 @@ class RegistroTipo2(Registro):
         CampoPosicional("ValorTotalRetencoes", None, True, "NUM", 15, 484, 498),
         CampoPosicional("TomadorEstrangeiro", None, True, "NUM", 1, 499, 499),
         CampoPosicional("PaisNacionalidadeTomadorEstrangeiro", None, False, "NUM", 3, 500, 502),
-        CampoPosicional("ServicoExportacao", None, False, "NUM", 1, 503, 503),
+        CampoPosicional("ServicoExportacao", None, True, "NUM", 1, 503, 503),
         CampoPosicional("IndicadorCPFCNPJTomador", None, False, "NUM", 1, 504, 504),
         CampoPosicional("CPFCNPJTomador", None, False, "NUM", 14, 505, 518),
         CampoPosicional("RazaoSocialNomeTomador", None, True, "ALFA", 60, 519, 578),
@@ -76,6 +76,28 @@ class RegistroTipo3(Registro):
         CampoPosicional("CaracterFimLinha", "\r\n", True, "ALFA", 1, 19, 19),
     ]
 
+class RegistroTipo4(Registro):
+    campos = [
+        CampoPosicional("TipoRegistro", "4", True, "NUM", 1, 1, 1),
+        CampoPosicional("OptanteSimplesNacional", None, True, "NUM", 1, 2, 2),
+        CampoPosicional("RegimeApuracaoSN", None, False, "NUM", 1, 3, 3),
+        CampoPosicional("CodigoPaisLocalServico", None, False, "NUM", 3, 4, 6),
+        CampoPosicional("CodigoCidadeLocalPrestacao", None, False, "NUM", 7, 7, 13),
+        CampoPosicional("CodigoCidadeTomador", None, False, "NUM", 7, 14, 20),
+        CampoPosicional("NIF", None, False, "ALFA", 40, 21, 60),
+        CampoPosicional("CodigoNBS", None, False, "NUM", 9, 61, 69),
+        CampoPosicional("CEPExteriorTomador", None, False, "ALFA", 11, 70, 80),
+        CampoPosicional("EstadoProvinciaTomadorExt", None, False, "ALFA", 60, 81, 140),
+        CampoPosicional("VinculoPartes", None, False, "NUM", 1, 141, 141),
+        CampoPosicional("Reservado", None, False, "ALFA", 30, 142, 171),
+        CampoPosicional("CEPExteriorLocalServico", None, False, "ALFA", 11, 172, 182),
+        CampoPosicional("EstadoProvinciaLocalExt", None, False, "ALFA", 60, 183, 242),
+        CampoPosicional("NomeEvento", None, False, "ALFA", 255, 243, 497),
+        CampoPosicional("DataInicioEvento", None, False, "NUM", 8, 498, 505),
+        CampoPosicional("DataFimEvento", None, False, "NUM", 8, 506, 513),
+        CampoPosicional("CodJustifCancelSubst", None, False, "NUM", 1, 514, 514),
+        CampoPosicional("CaracterFimLinha", "\r\n", True, "ALFA", 1, 515, 515),
+    ]
 
 class RegistroTipo9(Registro):
     campos = [
