@@ -1,3 +1,5 @@
+import re
+import unicodedata
 
 
 class CampoPosicional:
@@ -21,20 +23,37 @@ class CampoPosicional:
         self.posicao_inicial = posicao_inicial
         self.posicao_final = posicao_final
 
+    def _sem_acentos(self, v):
+        v = unicodedata.normalize("NFKD", v)
+        return "".join(ch for ch in v if not unicodedata.combining(ch))
+
+    def _so_digitos(self, v):
+        v = re.sub(r"\D", "", v)
+        return v or "0"
+
     def exportar(self):
         """Formats and exports the field value based on its type.
 
         Returns:
             str: The formatted field value.
         """
-        if self.tipo == "ALFA":
-            formatado = str(self.valor).ljust(self.tamanho)  # Format the string as left-justified
-        elif self.tipo == "NUM":
-            formatado = str(self.valor).rjust(self.tamanho, "0")  # Format the string as right-justified with zeroes added to the left
-        else:
-            raise ValueError(f"Tipo desconhecido: {self.tipo}")  # Raise an error if the data type is unknown
+        if self.nome.lower() in ("caracterfimlinha", "caracter_fim_linha"):
+            return "\r\n"
 
-        return formatado[: self.tamanho]  # Return only the first n characters of the formatted string based on the field size
+        v = "" if self.valor is None else str(self.valor)
+
+        if self.tipo == "ALFA":
+            v = self._sem_acentos(v)
+            v = v[: self.tamanho].ljust(self.tamanho, " ")
+
+        elif self.tipo == "NUM":
+            v = self._so_digitos(v)
+            v = v[-self.tamanho:].rjust(self.tamanho, "0")
+
+        else:
+            raise ValueError(f"Tipo desconhecido: {self.tipo}")
+
+        return v  # Return only the first n characters of the formatted string based on the field size
 
 
 class Registro:
