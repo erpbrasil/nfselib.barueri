@@ -41,7 +41,7 @@ class RegistroTipo2(Registro):
         CampoPosicional("BairroLogradouroLocalServico", "", False, "ALFA", 40, 368, 407),
         CampoPosicional("CidadeLogradouroLocalServico", "", False, "ALFA", 40, 408, 447),
         CampoPosicional("UFLogradouroLocalServico", "", False, "ALFA", 2, 448, 449),
-        CampoPosicional("CEPLogradouroLocalServico", "", False, "ALFA", 8, 450, 457),
+        CampoPosicional("CEPLogradouroLocalServico", "", False, "NUM", 8, 450, 457),
         CampoPosicional("QuantidadeServico", "", True, "NUM", 6, 458, 463),
         CampoPosicional("ValorServico", "", True, "NUM", 15, 464, 478),
         CampoPosicional("Reservado", "", False, "ALFA", 5, 479, 483),
@@ -58,7 +58,7 @@ class RegistroTipo2(Registro):
         CampoPosicional("BairroLogradouroTomador", "", False, "ALFA", 40, 693, 732),
         CampoPosicional("CidadeLogradouroTomador", "", False, "ALFA", 40, 733, 772),
         CampoPosicional("UFLogradouroTomador", "", False, "ALFA", 2, 773, 774),
-        CampoPosicional("CEPLogradouroTomador", "", False, "ALFA", 8, 775, 782),
+        CampoPosicional("CEPLogradouroTomador", "", False, "NUM", 8, 775, 782),
         CampoPosicional("EmailTomador", "", False, "ALFA", 152, 783, 934),
         CampoPosicional("Fatura", "", False, "NUM", 6, 935, 940),
         CampoPosicional("ValorFatura", "", False, "NUM", 15, 941, 955),
@@ -96,8 +96,45 @@ class RegistroTipo4(Registro):
         CampoPosicional("DataInicioEvento", "", False, "NUM", 8, 498, 505),
         CampoPosicional("DataFimEvento", "", False, "NUM", 8, 506, 513),
         CampoPosicional("CodJustifCancelSubst", "", False, "NUM", 1, 514, 514),
-        CampoPosicional("CaracterFimLinha", "\r\n", True, "ALFA", 1, 515, 515),
+        CampoPosicional("CodigoIndicadorOperacaoFornecimento", "", False, "NUM", 6, 515, 520),
+        CampoPosicional("CodigoClassificacaoTributariaIBSCBS", "", False, "NUM", 6, 521, 526),
+        CampoPosicional("CodigoSituacaoTributariaIBSCBS", "", False, "NUM", 3, 527, 529),
+        CampoPosicional("OperacaoUsoConsumoPessoal", "", False, "NUM", 1, 530, 530),
+        CampoPosicional("IndicadorDestinatarioServico", "", False, "NUM", 1, 531, 531),
+        CampoPosicional("CaracterFimLinha", "\r\n", True, "ALFA", 1, 532, 532),
     ]
+
+
+class RegistroTipo5(Registro):
+    campos = [
+        CampoPosicional("TipoRegistro", "5", True, "NUM", 1, 1, 1),
+        CampoPosicional("CodigoClassificacaoCreditoPresumidoIBSCBS", "", False, "NUM", 2, 2, 3),
+        CampoPosicional("TipoEnteGovernamental", "", False, "NUM", 1, 4, 4),
+        CampoPosicional("TipoOperacaoEntesGovernamentais", "", False, "NUM", 1, 5, 5),
+        CampoPosicional("ChaveNFSeReferenciada", "", False, "NUM", 50, 6, 55),
+        CampoPosicional("CodigoNCMBemMovelLocacao", "", False, "NUM", 8, 56, 63),
+        CampoPosicional("DescricaoBemMovelLocacao", "", False, "ALFA", 150, 64, 213),
+        CampoPosicional("QuantidadeBemMovelLocacao", "", False, "NUM", 3, 214, 216),
+        CampoPosicional("IndicadorOperacaoDoacao", "", False, "NUM", 1, 217, 217),
+        CampoPosicional("DestinatarioServicoEstrangeiro", "", False, "ALFA", 1, 218, 218),
+        CampoPosicional("CPFCNPJDestinatarioServico", "", False, "NUM", 14, 219, 232),
+        CampoPosicional("RazaoSocialNomeDestinatarioServico", "", False, "ALFA", 60, 233, 292),
+        CampoPosicional("EnderecoLogradouroDestinatarioServico", "", False, "ALFA", 75, 293, 367),
+        CampoPosicional("NumeroLogradouroDestinatarioServico", "", False, "ALFA", 9, 368, 376),
+        CampoPosicional("ComplementoLogradouroDestinatarioServico", "", False, "ALFA", 30, 377, 406),
+        CampoPosicional("BairroLogradouroDestinatarioServico", "", False, "ALFA", 40, 407, 446),
+        CampoPosicional("CidadeLogradouroDestinatarioServico", "", False, "ALFA", 40, 447, 486),
+        CampoPosicional("CodigoCidadeDestinatarioServico", "", False, "NUM", 7, 487, 493),
+        CampoPosicional("UFLogradouroDestinatarioServico", "", False, "ALFA", 2, 494, 495),
+        CampoPosicional("CodigoPaisDestinatarioServico", "", False, "ALFA", 3, 496, 498),
+        CampoPosicional("CEPLogradouroDestinatarioServico", "", False, "NUM", 8, 499, 506),
+        CampoPosicional("EmailDestinatarioServico", "", False, "ALFA", 80, 507, 586),
+        CampoPosicional("NIFDestinatario", "", False, "ALFA", 40, 587, 626),
+        CampoPosicional("CodigoEnderecoPostalDestinatarioEstrangeiro", "", False, "ALFA", 11, 627, 637),
+        CampoPosicional("EstadoProvinciaRegiaoDestinatarioEstrangeiro", "", False, "ALFA", 60, 638, 697),
+        CampoPosicional("CaracterFimLinha", "\r\n", True, "ALFA", 1, 698, 698),
+    ]
+
 
 class RegistroTipo9(Registro):
     campos = [
