@@ -38,7 +38,8 @@ class CampoPosicional:
 
 
 class Registro:
-    campos = []  # A list to store the fields in the record
+    def __init__(self):
+        self.campos = []  # A list to store the fields in the record
 
     def exportar(self):
         """Exports the record by concatenating its fields.
@@ -47,6 +48,31 @@ class Registro:
             str: The concatenated fields.
         """
         return ''.join([campo.exportar() for campo in self.campos])
+
+    def carregar_linha(self, linha: str):
+        """Lê uma linha posicional e preenche os campos deste registro."""
+        for campo in self.campos:
+            ini = campo.posicao_inicial - 1  # posições são 1-based
+            fim = campo.posicao_final       # slicing pega até fim-1
+
+            trecho = linha[ini:fim]
+
+            if campo.tipo == "ALFA":
+                valor = trecho.rstrip()
+            elif campo.tipo == "NUM":
+                # aqui eu manteria zeros à esquerda, é comum em código/número de NFSe
+                valor = trecho.strip() or "0"
+            else:
+                valor = trecho
+
+            campo.valor = valor
+        return self
+
+    @classmethod
+    def from_line(cls, linha: str):
+        """Cria uma instância do registro a partir de uma linha posicional."""
+        inst = cls()
+        return inst.carregar_linha(linha)
 
     def __setattr__(self, name, value):
         """Sets the value of a field in the record.
