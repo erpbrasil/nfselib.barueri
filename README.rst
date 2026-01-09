@@ -39,9 +39,9 @@ Overview
     :alt: Supported implementations
     :target: https://pypi.org/project/nfselib.barueri
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/erpbrasil/nfselib.barueri/v1.0.0.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/erpbrasil/nfselib.barueri/v1.1.0.svg
     :alt: Commits since latest release
-    :target: https://github.com/erpbrasil/nfselib.barueri/compare/v1.0.0...main
+    :target: https://github.com/erpbrasil/nfselib.barueri/compare/v1.1.0...main
 
 
 
